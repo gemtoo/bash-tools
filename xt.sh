@@ -1,5 +1,5 @@
 #!/bin/bash
-# xt.sh = archive eXTractor
+# Unarchiver script
 source /etc/init.d/functions.sh
 
 ARC="$1"
