@@ -12,7 +12,9 @@ RST='\x1b[0m'
 # List of domains
 DOMAINS=$(/usr/bin/grep -riIn "server_name" /etc/nginx/ | /usr/bin/tr -s '[:space:]' | /usr/bin/cut -d ' ' -f3 | /usr/bin/sed "s/;//g;s/_//g" | sort | uniq | xargs)
 
+# Loop through each domain
 for DOMAIN in $DOMAINS; do
+        # Send HTTP GET request
         RESPONSE=$(curl -o /dev/null -s -w "%{http_code}" "https://$DOMAIN")
         if [ "$RESPONSE" -eq 0 ]; then
                 RESPONSE=$(curl -o /dev/null -s -w "%{http_code}" "http://$DOMAIN")

@@ -1,6 +1,7 @@
 #!/bin/bash
 source logger.lib
 
+# Colors
 RED='\x1b[0;31;1m'
 GRN='\x1b[0;32;1m'
 YLW='\x1b[0;33;1m'
@@ -84,6 +85,7 @@ WCFG="${W}/${DNS}.conf"
 function check_if_dns_record_exists() {
 	local OUR_IP="86.57.245.73"
 	info "Checking DNS A record ..."
+
 	A_RECORD=$(dig +short "${DNS}")
 	if [[ "${A_RECORD}" == "${IP}" ]]; then
 		return 0
