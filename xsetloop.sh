@@ -18,7 +18,7 @@ while true; do
 	if [ $ON -gt 1 ]; then
 		xsetroot -name "      $INTERFACE - $BAT - <$DF> - Vol. $VOL - [$LAY] - $(TZ='Europe/Moscow' date '+%B %d, %A') - $(TZ='Europe/Moscow' date '+%H:%M:%S')"
 	else
-		xsetroot -name "      OFF - $BAT - <$DF> - Vol. $VOL - [$LAY] - $(TZ='Europe/Moscow' date '+%B %d, %A') - $(TZ='Europe/Moscow' date '+%H:%M:%S')"
+		xsetroot -name "      $BAT - <$DF> - Vol. $VOL - [$LAY] - $(TZ='Europe/Moscow' date '+%B %d, %A') - $(TZ='Europe/Moscow' date '+%H:%M:%S')"
 	fi
 	sleep 0.5
 done
